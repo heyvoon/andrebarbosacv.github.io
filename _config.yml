@@ -11,13 +11,19 @@ header_pages:
   - resume-es.md
   - resume-pt.md
 
+defaults:
+  - scope:
+      path: "_pages"
+    values:
+      permalink: /:basename/
+
 resume:
   en:
     title: "Resume (English)"
-    permalink: "/resume/resume-en/"
+    permalink: "/resume-en/"
   es:
     title: "Resume (Spanish)"
-    permalink: "/resume/resume-es/"
+    permalink: "/resume-es/"
   pt:
     title: "Resume (Portuguese)"
-    permalink: "/resume/resume-pt/"
+    permalink: "/resume-pt/"
