@@ -26,9 +26,9 @@ title: Home
     <div class="view-cv-section">
       <h2>View My Resume</h2>
       <div class="cv-links">
-        <a href="/resume/resume-en/" class="btn">View English CV</a>
-        <a href="/resume/resume-es/" class="btn">View Spanish CV</a>
-        <a href="/resume/resume-pt/" class="btn">View Portuguese CV</a>
+        <a href="/resume-en/" class="btn">View English CV</a>
+        <a href="/resume-es/" class="btn">View Spanish CV</a>
+        <a href="/resume-pt/" class="btn">View Portuguese CV</a>
       </div>
     </div>
 
@@ -49,9 +49,9 @@ title: Home
     const videoSource = document.querySelector('#intro-video source');
     const video = document.getElementById('intro-video');
     const viewCvLinks = {
-      'en': '/resume/resume-en/',
-      'es': '/resume/resume-es/',
-      'pt': '/resume/resume-pt/'
+      'en': '/resume-en/',
+      'es': '/resume-es/',
+      'pt': '/resume-pt/'
     };
     const downloadPdfLinks = {
       'en': '{{ "/assets/pdf/andre_barbosa_resume_english.pdf" | relative_url }}',
