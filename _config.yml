@@ -1,0 +1,21 @@
+title: "André Barbosa de Amaral"
+email: bcn.andre@gmail.com
+baseurl: ""
+url: ""
+theme: minima
+
+header_pages:
+  - resume-en.md
+  - resume-es.md
+  - resume-pt.md
+
+resume:
+  en:
+    title: "Resume (English)"
+    permalink: "/resume-en/"
+  es:
+    title: "Resume (Spanish)"
+    permalink: "/resume-es/"
+  pt:
+    title: "Resume (Portuguese)"
+    permalink: "/resume-pt/"
