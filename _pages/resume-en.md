@@ -3,9 +3,11 @@ layout: page
 title: Resume (English)
 permalink: /resume-en/
 ---
-<nav>
-<a href="#summary">Summary</a> | <a href="#experience">Experience</a> | <a href="#education">Education</a> | <a href="#skills">Skills</a> | <a href="#languages">Languages</a> | <a href="#certifications">Certifications</a>
-</nav>
+<div class="language-switcher">
+  <button class="language-btn active" data-lang="en">English</button>
+  <button class="language-btn" data-lang="es">Español</button>
+  <button class="language-btn" data-lang="pt">Português</button>
+</div>
 
 <section id="summary">
 ## Summary

@@ -3,9 +3,11 @@ layout: page
 title: Currículum (Español)
 permalink: /resume-es/
 ---
-<nav>
-<a href="#summary">Resumen</a> | <a href="#experience">Experiencia</a> | <a href="#education">Educación</a> | <a href="#skills">Habilidades</a> | <a href="#languages">Idiomas</a> | <a href="#certifications">Certificaciones</a>
-</nav>
+<div class="language-switcher">
+  <button class="language-btn" data-lang="en">English</button>
+  <button class="language-btn active" data-lang="es">Español</button>
+  <button class="language-btn" data-lang="pt">Português</button>
+</div>
 
 <section id="summary">
 ## Resumen

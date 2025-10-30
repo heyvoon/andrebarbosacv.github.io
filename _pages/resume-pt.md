@@ -3,9 +3,11 @@ layout: page
 title: Currículo (Português)
 permalink: /resume-pt/
 ---
-<nav>
-<a href="#summary">Resumo</a> | <a href="#experience">Experiência</a> | <a href="#education">Educação</a> | <a href="#skills">Habilidades</a> | <a href="#languages">Idiomas</a> | <a href="#certifications">Certificações</a>
-</nav>
+<div class="language-switcher">
+  <button class="language-btn" data-lang="en">English</button>
+  <button class="language-btn" data-lang="es">Español</button>
+  <button class="language-btn active" data-lang="pt">Português</button>
+</div>
 
 <section id="summary">
 ## Resumo
