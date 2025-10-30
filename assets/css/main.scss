@@ -84,28 +84,36 @@ main {
 // Actions Container
 .actions-container {
   display: flex;
-  flex-direction: column;
-  gap: 3rem;
-  max-width: 800px;
+  flex-direction: row;
+  gap: 2rem;
+  max-width: 900px;
   margin: 0 auto;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 // View CV Section
 .view-cv-section, .pdf-download-section {
   text-align: center;
+  background-color: #1e1e1e;
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid #333;
+  flex: 1;
+  min-width: 300px;
 }
 
 .view-cv-section h2, .pdf-download-section h2 {
   color: #bb86fc;
-  margin-bottom: 2rem;
-  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
 }
 
 .cv-links, .pdf-links {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   gap: 1rem;
-  flex-wrap: wrap;
+  align-items: center;
 }
 
 // Button Styles
@@ -184,6 +192,16 @@ footer {
   
   .content-section {
     padding: 3rem 1rem;
+  }
+  
+  .actions-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .view-cv-section, .pdf-download-section {
+    width: 100%;
+    max-width: 400px;
   }
   
   .cv-links, .pdf-links {
