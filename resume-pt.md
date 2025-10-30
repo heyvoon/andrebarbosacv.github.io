@@ -9,14 +9,11 @@ permalink: /resume-pt/
   <button class="language-btn active" data-lang="pt">Português</button>
 </div>
 
-<section id="summary">
 ## Resumo
 Engenheiro Sênior de Infraestrutura de TI com mais de três décadas de experiência especializado em infraestrutura escalável, automação e soluções em nuvem. Foco em tecnologias open-source e engenharia com IA para melhorar o design de infraestrutura e fluxos de trabalho DevOps.
 
 **Expertise Principal:** Cloud & IaC, Virtualização/Contêineres, Monitoramento e Integração de IA
-</section>
 
-<section id="experience">
 ## Experiência
 
 ### Eurofins
@@ -74,9 +71,7 @@ Projetos incluíram:
 **Colt Technology Services** - Engenheiro Arquiteto IT Pré-Venda - Jan 2011-Ago 2011  
 **innoconsys S.L.** - Subdiretor IT - Jun 2010-Set 2010  
 **SELLBYTEL Group Spain** - Administrador de Sistemas Nível 3 - Jan 2006-Jun 2010
-</section>
 
-<section id="education">
 ## Educação
 **University of Virginia**  
 Tecnologia da Informação, Administração e Gestão de Tecnologia/Informática  
@@ -85,23 +80,16 @@ Tecnologia da Informação, Administração e Gestão de Tecnologia/Informática
 **Nova Asociación Brasileira de Enseñanza en Brasil**  
 Bacharelado em Ciências Contábeis  
 1989 - 1992
-</section>
 
-<section id="skills">
 ## Habilidades
 **Cloud:** AWS, Azure, Terraform, CloudFormation, Office 365  
 **Virtualização:** VMware, Hyper-V, Docker, Kubernetes, Rancher  
 **Automação:** PowerShell, Python, Azure DevOps, pipelines CI/CD  
 **Monitoramento:** Grafana, Prometheus, Zabbix, Nagios  
 **Infraestrutura:** Active Directory, Exchange, SCCM, Servidores Linux/Windows
-</section>
 
-<section id="languages">
 ## Idiomas
 Português (Nativo ou Bilíngue), Inglês (Nativo ou Bilíngue), Espanhol (Nativo ou Bilíngue), Catalão (Competência Limitada), Italiano (Competência Limitada)
-</section>
 
-<section id="certifications">
 ## Certificações
 Microsoft Certified: Azure Fundamentals
-</section>
