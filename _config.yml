@@ -1,8 +1,10 @@
 title: "André Barbosa de Amaral"
 email: bcn.andre@gmail.com
-baseurl: ""
-url: ""
-theme: minima
+baseurl: "/resume"
+url: "https://heyvoon.github.io"
+remote_theme: pages-themes/hacker@v0.2.0
+plugins:
+  - jekyll-remote-theme
 
 header_pages:
   - resume-en.md
@@ -12,10 +14,10 @@ header_pages:
 resume:
   en:
     title: "Resume (English)"
-    permalink: "/resume-en/"
+    permalink: "/resume/resume-en/"
   es:
     title: "Resume (Spanish)"
-    permalink: "/resume-es/"
+    permalink: "/resume/resume-es/"
   pt:
     title: "Resume (Portuguese)"
-    permalink: "/resume-pt/"
+    permalink: "/resume/resume-pt/"
