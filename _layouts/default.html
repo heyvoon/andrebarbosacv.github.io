@@ -37,6 +37,16 @@ layout: default
                         Your browser does not support the video tag.
                     </video>
                 </div>
+                
+                <!-- Calendar Booking Section -->
+                <div class="calendar-section">
+                    <div class="calendar-card">
+                        <p id="calendar-text">{{ site.data.en.calendar_text }}</p>
+                        <a href="{{ site.data.en.calendar_link }}" class="calendar-link" target="_blank" id="calendar-link">
+                            {{ site.data.en.calendar_link }}
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -84,6 +94,8 @@ layout: default
             const downloadPdfBtn = document.getElementById('download-pdf-btn');
             const videoTabBtn = document.getElementById('video-tab-btn');
             const resumeTabBtn = document.getElementById('resume-tab-btn');
+            const calendarText = document.getElementById('calendar-text');
+            const calendarLink = document.getElementById('calendar-link');
 
             // Language data mapping
             const languageData = {
@@ -95,6 +107,8 @@ layout: default
                     button_labels: {
                         download_pdf: 'Download PDF Resume'
                     },
+                    calendar_text: '{{ site.data.en.calendar_text }}',
+                    calendar_link: '{{ site.data.en.calendar_link }}',
                     video_path: '{{ site.data.en.video_path | relative_url }}',
                     pdf_path: '{{ site.data.en.pdf_path | relative_url }}'
                 },
@@ -106,6 +120,8 @@ layout: default
                     button_labels: {
                         download_pdf: 'Descargar PDF del Currículum'
                     },
+                    calendar_text: '{{ site.data.es.calendar_text }}',
+                    calendar_link: '{{ site.data.es.calendar_link }}',
                     video_path: '{{ site.data.es.video_path | relative_url }}',
                     pdf_path: '{{ site.data.es.pdf_path | relative_url }}'
                 },
@@ -117,6 +133,8 @@ layout: default
                     button_labels: {
                         download_pdf: 'Baixar PDF do Currículo'
                     },
+                    calendar_text: '{{ site.data.pt.calendar_text }}',
+                    calendar_link: '{{ site.data.pt.calendar_link }}',
                     video_path: '{{ site.data.pt.video_path | relative_url }}',
                     pdf_path: '{{ site.data.pt.pdf_path | relative_url }}'
                 }
@@ -187,6 +205,11 @@ layout: default
                 // Update download button
                 downloadPdfBtn.textContent = data.button_labels.download_pdf;
                 downloadPdfBtn.href = data.pdf_path;
+
+                // Update calendar text and link
+                calendarText.textContent = data.calendar_text;
+                calendarLink.textContent = data.calendar_link;
+                calendarLink.href = data.calendar_link;
 
                 // Update video if video tab is active
                 if (getCurrentTab() === 'video') {

@@ -140,6 +140,41 @@ main {
     }
   }
   
+  .calendar-section {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    
+    .calendar-card {
+      background-color: #1e1e1e;
+      border: 1px solid #333;
+      border-radius: 8px;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      
+      p {
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+        color: #e0e0e0;
+        font-size: 1.1rem;
+      }
+      
+      .calendar-link {
+        color: #bb86fc;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.1rem;
+        transition: color 0.3s ease;
+        
+        &:hover {
+          color: #a5d6ff;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
   .resume-content {
     max-width: 800px;
     margin: 0 auto 2rem;

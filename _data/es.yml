@@ -6,6 +6,8 @@ nav_labels:
   resume_tab: "Currículum"
 button_labels:
   download_pdf: "Descargar PDF del Currículum"
+calendar_text: "Si desea programar una llamada telefónica o de video conmigo, utilice el siguiente enlace para ver mi disponibilidad y elegir un espacio libre en mi calendario. Gracias."
+calendar_link: "https://cal.com/bcnandre/bookme"
 video_path: "/assets/video/intro_es.mp4"
 pdf_path: "/assets/pdf/andre_barbosa_resume_spanish.pdf"
 resume_md_path: "assets/resumes/resume-es.md"
