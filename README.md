@@ -25,7 +25,7 @@ This is a Jekyll-based static site that can be deployed to GitHub Pages or any s
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/digital-cv.git
+git clone https://github.com/heyvoon/heyvoon.github.io.git
 cd digital-cv
 ```
 
