@@ -11,92 +11,217 @@ layout: default
 </head>
 <body>
     {% include header.html %}
+    
+    <!-- Main Navigation Tabs -->
+    <nav class="main-nav">
+        <div class="container">
+            <div class="tab-navigation">
+                <button class="tab-btn active" data-tab="video" id="video-tab-btn">
+                    {% assign default_lang = site.data.en %}
+                    {{ default_lang.nav_labels.video_tab }}
+                </button>
+                <button class="tab-btn" data-tab="resume" id="resume-tab-btn">
+                    {{ default_lang.nav_labels.resume_tab }}
+                </button>
+            </div>
+        </div>
+    </nav>
+
     <main>
-        {{ content }}
+        <!-- Video Tab Content -->
+        <div id="video-tab-content" class="tab-content active">
+            <div class="container">
+                <div class="video-container">
+                    <video id="intro-video" controls width="100%" muted autoplay>
+                        <source src="{{ site.data.en.video_path | relative_url }}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </div>
+
+        <!-- Resume Tab Content -->
+        <div id="resume-tab-content" class="tab-content">
+            <div class="container">
+                <div class="resume-content" id="resume-content">
+                    {% capture resume_content %}{% include_relative {{ site.data.en.resume_md_path }} %}{% endcapture %}
+                    {{ resume_content | markdownify }}
+                </div>
+                <div class="download-section">
+                    <a href="{{ site.data.en.pdf_path | relative_url }}" class="download-pdf-btn" id="download-pdf-btn" download>
+                        {{ site.data.en.button_labels.download_pdf }}
+                    </a>
+                </div>
+            </div>
+        </div>
     </main>
+
     {% include footer.html %}
+
     <script>
-        // Global language management
+        // Global language management and tab switching
         document.addEventListener('DOMContentLoaded', function() {
-            const headerLangButtons = document.querySelectorAll('.header-right .language-btn');
-            const downloadLink = document.getElementById('download-cv-link');
-            
-            // PDF download links mapping
-            const pdfLinks = {
-                'en': '{{ "/assets/pdf/andre_barbosa_resume_english.pdf" | relative_url }}',
-                'es': '{{ "/assets/pdf/andre_barbosa_resume_spanish.pdf" | relative_url }}',
-                'pt': '{{ "/assets/pdf/andre_barbosa_resume_portuguese.pdf" | relative_url }}'
+            // Elements
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+            const languageButtons = document.querySelectorAll('.language-btn');
+            const videoElement = document.getElementById('intro-video');
+            const resumeContent = document.getElementById('resume-content');
+            const downloadPdfBtn = document.getElementById('download-pdf-btn');
+            const videoTabBtn = document.getElementById('video-tab-btn');
+            const resumeTabBtn = document.getElementById('resume-tab-btn');
+
+            // Language data mapping
+            const languageData = {
+                'en': {
+                    nav_labels: {
+                        video_tab: 'Video Introduction',
+                        resume_tab: 'Resume'
+                    },
+                    button_labels: {
+                        download_pdf: 'Download PDF Resume'
+                    },
+                    video_path: '{{ site.data.en.video_path | relative_url }}',
+                    pdf_path: '{{ site.data.en.pdf_path | relative_url }}',
+                    resume_md_path: '{{ site.data.en.resume_md_path }}'
+                },
+                'es': {
+                    nav_labels: {
+                        video_tab: 'Introducción en Video',
+                        resume_tab: 'Currículum'
+                    },
+                    button_labels: {
+                        download_pdf: 'Descargar PDF del Currículum'
+                    },
+                    video_path: '{{ site.data.es.video_path | relative_url }}',
+                    pdf_path: '{{ site.data.es.pdf_path | relative_url }}',
+                    resume_md_path: '{{ site.data.es.resume_md_path }}'
+                },
+                'pt': {
+                    nav_labels: {
+                        video_tab: 'Introdução em Vídeo',
+                        resume_tab: 'Currículo'
+                    },
+                    button_labels: {
+                        download_pdf: 'Baixar PDF do Currículo'
+                    },
+                    video_path: '{{ site.data.pt.video_path | relative_url }}',
+                    pdf_path: '{{ site.data.pt.pdf_path | relative_url }}',
+                    resume_md_path: '{{ site.data.pt.resume_md_path }}'
+                }
             };
-            
+
             // Get or set default language
             function getCurrentLanguage() {
                 return localStorage.getItem('selectedLanguage') || 'en';
             }
-            
+
             function setCurrentLanguage(lang) {
                 localStorage.setItem('selectedLanguage', lang);
             }
-            
-            // Detect current page type
-            const currentPath = window.location.pathname;
-            const isHomePage = currentPath === '/' || currentPath === '/index.html' || currentPath.endsWith('/');
-            const isResumePage = currentPath.includes('/resume-');
-            
-            // Get current language from URL or localStorage
-            let currentLang = getCurrentLanguage();
-            
-            if (currentPath.includes('/resume-en')) {
-                currentLang = 'en';
-                setCurrentLanguage('en');
-            } else if (currentPath.includes('/resume-es')) {
-                currentLang = 'es';
-                setCurrentLanguage('es');
-            } else if (currentPath.includes('/resume-pt')) {
-                currentLang = 'pt';
-                setCurrentLanguage('pt');
+
+            // Get current active tab
+            function getCurrentTab() {
+                return localStorage.getItem('activeTab') || 'video';
             }
-            
-            // Show download button if on a resume page
-            if (isResumePage && downloadLink) {
-                downloadLink.href = pdfLinks[currentLang];
-                downloadLink.style.display = 'inline-flex';
-                downloadLink.setAttribute('download', '');
+
+            function setCurrentTab(tab) {
+                localStorage.setItem('activeTab', tab);
             }
-            
-            // Highlight active language button
-            headerLangButtons.forEach(button => {
-                if (button.getAttribute('data-lang') === currentLang) {
-                    button.classList.add('active');
-                } else {
-                    button.classList.remove('active');
-                }
-            });
-            
-            // Language button click handlers
-            headerLangButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const lang = this.getAttribute('data-lang');
-                    setCurrentLanguage(lang);
-                    
-                    // Update active state
-                    headerLangButtons.forEach(btn => btn.classList.remove('active'));
-                    this.classList.add('active');
-                    
-                    // Navigate to resume page or trigger video update on home page
-                    if (isHomePage) {
-                        // Trigger custom event for home page video update
-                        window.dispatchEvent(new CustomEvent('languageChanged', { detail: { language: lang } }));
+
+            // Tab switching logic
+            function switchTab(tabName) {
+                // Update tab buttons
+                tabButtons.forEach(btn => {
+                    if (btn.getAttribute('data-tab') === tabName) {
+                        btn.classList.add('active');
                     } else {
-                        // Navigate to the resume page for the selected language
-                        window.location.href = '/resume-' + lang + '/';
+                        btn.classList.remove('active');
                     }
                 });
-            });
-            
-            // Trigger initial language event for home page
-            if (isHomePage) {
-                window.dispatchEvent(new CustomEvent('languageChanged', { detail: { language: currentLang } }));
+
+                // Update tab contents
+                tabContents.forEach(content => {
+                    if (content.id === tabName + '-tab-content') {
+                        content.classList.add('active');
+                    } else {
+                        content.classList.remove('active');
+                    }
+                });
+
+                setCurrentTab(tabName);
             }
+
+            // Language switching logic
+            function switchLanguage(lang) {
+                const data = languageData[lang];
+                if (!data) return;
+
+                // Update tab labels
+                videoTabBtn.textContent = data.nav_labels.video_tab;
+                resumeTabBtn.textContent = data.nav_labels.resume_tab;
+
+                // Update download button
+                downloadPdfBtn.textContent = data.button_labels.download_pdf;
+                downloadPdfBtn.href = data.pdf_path;
+
+                // Update video if video tab is active
+                if (getCurrentTab() === 'video') {
+                    const currentTime = videoElement.currentTime;
+                    videoElement.querySelector('source').src = data.video_path;
+                    videoElement.load();
+                    videoElement.currentTime = currentTime;
+                    videoElement.play().catch(e => console.log('Autoplay prevented:', e));
+                }
+
+                // Update resume content if resume tab is active
+                if (getCurrentTab() === 'resume') {
+                    // This would require a more complex solution for dynamic content loading
+                    // For now, we'll rely on the initial server-side rendering
+                    console.log('Resume content update would happen here for language:', lang);
+                }
+
+                // Update active language button
+                languageButtons.forEach(btn => {
+                    if (btn.getAttribute('data-lang') === lang) {
+                        btn.classList.add('active');
+                    } else {
+                        btn.classList.remove('active');
+                    }
+                });
+
+                setCurrentLanguage(lang);
+            }
+
+            // Initialize
+            function initialize() {
+                const currentLang = getCurrentLanguage();
+                const currentTab = getCurrentTab();
+
+                // Set initial language
+                switchLanguage(currentLang);
+                
+                // Set initial tab
+                switchTab(currentTab);
+            }
+
+            // Event listeners
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const tabName = this.getAttribute('data-tab');
+                    switchTab(tabName);
+                });
+            });
+
+            languageButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const lang = this.getAttribute('data-lang');
+                    switchLanguage(lang);
+                });
+            });
+
+            // Initialize the application
+            initialize();
         });
     </script>
 </body>

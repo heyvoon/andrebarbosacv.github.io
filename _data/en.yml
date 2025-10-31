@@ -1,0 +1,11 @@
+lang_code: "en"
+lang_name: "English"
+flag_emoji: "🇺🇸"
+nav_labels:
+  video_tab: "Video Introduction"
+  resume_tab: "Resume"
+button_labels:
+  download_pdf: "Download PDF Resume"
+video_path: "/assets/video/intro_en.mp4"
+pdf_path: "/assets/pdf/andre_barbosa_resume_english.pdf"
+resume_md_path: "assets/resumes/resume-en.md"
