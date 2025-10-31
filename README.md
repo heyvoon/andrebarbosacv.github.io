@@ -1,4 +1,4 @@
-# Digital CV - André Barbosa
+# Digital Curriculum - André Barbosa
 
 A modern, multilingual digital curriculum vitae built with Jekyll, featuring a single-page application interface with video introductions and resume content in multiple languages.
 
