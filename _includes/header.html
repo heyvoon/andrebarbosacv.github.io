@@ -1,6 +1,9 @@
 <header>
     <div class="container">
-        <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+        <div class="header-left">
+            <img src="{{ '/assets/profile_picture.png' | relative_url }}" alt="Profile Picture" class="profile-picture">
+            <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+        </div>
         <div class="header-right">
             <a href="https://www.linkedin.com/in/abamaral" target="_blank" class="linkedin-link">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
