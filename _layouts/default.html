@@ -16,10 +16,38 @@ layout: default
     </main>
     {% include footer.html %}
     <script>
-        // Header language switcher functionality
+        // Header language switcher and download functionality
         document.addEventListener('DOMContentLoaded', function() {
             const headerLangButtons = document.querySelectorAll('.header-right .language-btn');
+            const downloadLink = document.getElementById('download-cv-link');
             
+            // PDF download links mapping
+            const pdfLinks = {
+                'en': '{{ "/assets/pdf/andre_barbosa_resume_english.pdf" | relative_url }}',
+                'es': '{{ "/assets/pdf/andre_barbosa_resume_spanish.pdf" | relative_url }}',
+                'pt': '{{ "/assets/pdf/andre_barbosa_resume_portuguese.pdf" | relative_url }}'
+            };
+            
+            // Detect current page language from URL
+            const currentPath = window.location.pathname;
+            let currentLang = null;
+            
+            if (currentPath.includes('/resume-en')) {
+                currentLang = 'en';
+            } else if (currentPath.includes('/resume-es')) {
+                currentLang = 'es';
+            } else if (currentPath.includes('/resume-pt')) {
+                currentLang = 'pt';
+            }
+            
+            // Show download button if on a resume page
+            if (currentLang && downloadLink) {
+                downloadLink.href = pdfLinks[currentLang];
+                downloadLink.style.display = 'inline-flex';
+                downloadLink.setAttribute('download', '');
+            }
+            
+            // Language button click handlers
             headerLangButtons.forEach(button => {
                 button.addEventListener('click', function() {
                     const lang = this.getAttribute('data-lang');
