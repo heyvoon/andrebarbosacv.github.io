@@ -1,9 +1,9 @@
 title: "André Barbosa de Amaral - Curriculum Vitae"
 baseurl: ""
-url: "https://andrebarbosacv.github.io/"
+url: "https://heyvoon.github.io"
 
 # GitHub Pages configuration
-repository: "heyvoon/andrebarbosacv.github.io"
+repository: "heyvoon/heyvoon.github.io"
 plugins:
   - jekyll-relative-links
 
