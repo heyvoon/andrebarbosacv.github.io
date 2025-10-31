@@ -43,10 +43,24 @@ layout: default
         <!-- Resume Tab Content -->
         <div id="resume-tab-content" class="tab-content">
             <div class="container">
-                <div class="resume-content" id="resume-content">
-                    {% assign default_resume = site.pages | where: "path", "assets/resumes/resume-en.md" | first %}
-                    {{ default_resume.content | markdownify }}
+                <!-- English Resume Content -->
+                <div class="resume-content language-content" id="resume-content-en" style="display: none;">
+                    {% assign en_resume = site.pages | where: "path", "assets/resumes/resume-en.md" | first %}
+                    {{ en_resume.content | markdownify }}
                 </div>
+                
+                <!-- Spanish Resume Content -->
+                <div class="resume-content language-content" id="resume-content-es" style="display: none;">
+                    {% assign es_resume = site.pages | where: "path", "assets/resumes/resume-es.md" | first %}
+                    {{ es_resume.content | markdownify }}
+                </div>
+                
+                <!-- Portuguese Resume Content -->
+                <div class="resume-content language-content" id="resume-content-pt" style="display: none;">
+                    {% assign pt_resume = site.pages | where: "path", "assets/resumes/resume-pt.md" | first %}
+                    {{ pt_resume.content | markdownify }}
+                </div>
+                
                 <div class="download-section">
                     <a href="{{ site.data.en.pdf_path | relative_url }}" class="download-pdf-btn" id="download-pdf-btn" download>
                         {{ site.data.en.button_labels.download_pdf }}
@@ -66,7 +80,7 @@ layout: default
             const tabContents = document.querySelectorAll('.tab-content');
             const languageButtons = document.querySelectorAll('.language-btn');
             const videoElement = document.getElementById('intro-video');
-            const resumeContent = document.getElementById('resume-content');
+            const resumeContentElements = document.querySelectorAll('.language-content');
             const downloadPdfBtn = document.getElementById('download-pdf-btn');
             const videoTabBtn = document.getElementById('video-tab-btn');
             const resumeTabBtn = document.getElementById('resume-tab-btn');
@@ -146,6 +160,18 @@ layout: default
                     }
                 });
 
+                // If switching to resume tab, ensure correct language content is shown
+                if (tabName === 'resume') {
+                    const currentLang = getCurrentLanguage();
+                    resumeContentElements.forEach(element => {
+                        element.style.display = 'none';
+                    });
+                    const currentResumeContent = document.getElementById('resume-content-' + currentLang);
+                    if (currentResumeContent) {
+                        currentResumeContent.style.display = 'block';
+                    }
+                }
+
                 setCurrentTab(tabName);
             }
 
@@ -171,8 +197,18 @@ layout: default
                     videoElement.play().catch(e => console.log('Autoplay prevented:', e));
                 }
 
-                // Note: Resume content is pre-rendered server-side for each language
-                // The content doesn't change dynamically due to Jekyll static generation
+                // Update resume content if resume tab is active
+                if (getCurrentTab() === 'resume') {
+                    // Hide all resume content elements
+                    resumeContentElements.forEach(element => {
+                        element.style.display = 'none';
+                    });
+                    // Show the resume content for the current language
+                    const currentResumeContent = document.getElementById('resume-content-' + lang);
+                    if (currentResumeContent) {
+                        currentResumeContent.style.display = 'block';
+                    }
+                }
 
                 // Update active language button
                 languageButtons.forEach(btn => {
@@ -196,6 +232,17 @@ layout: default
                 
                 // Set initial tab
                 switchTab(currentTab);
+
+                // Ensure the correct resume content is shown on initial load
+                if (currentTab === 'resume') {
+                    resumeContentElements.forEach(element => {
+                        element.style.display = 'none';
+                    });
+                    const initialResumeContent = document.getElementById('resume-content-' + currentLang);
+                    if (initialResumeContent) {
+                        initialResumeContent.style.display = 'block';
+                    }
+                }
             }
 
             // Event listeners
