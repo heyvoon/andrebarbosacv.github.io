@@ -156,8 +156,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ## 📞 Contact
 
 - **LinkedIn**: [André Barbosa](https://www.linkedin.com/in/abamaral)
-- **Live Site**: https://yourusername.github.io/
-- **Email**: bcn.andre@gmail.com
+- **Live Site**: https://heyvoon.github.io/
 
 ---
 
