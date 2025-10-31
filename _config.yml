@@ -7,18 +7,13 @@ plugins:
   - jekyll-remote-theme
 
 include:
-  - _pages
-
-header_pages:
-  - resume-en.md
-  - resume-es.md
-  - resume-pt.md
+  - assets/resumes
 
 defaults:
   - scope:
-      path: "_pages"
+      path: "assets/resumes"
     values:
-      permalink: /:basename/
+      permalink: /resume-:basename/
 
 resume:
   en:

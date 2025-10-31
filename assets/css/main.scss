@@ -30,6 +30,22 @@ header .container {
   align-items: center;
 }
 
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.header-right .language-switcher {
+  margin: 0;
+  gap: 0.5rem;
+}
+
+.header-right .language-btn {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+  min-width: 40px;
+}
+
 .site-title {
   color: #bb86fc;
   font-weight: 600;
@@ -216,6 +232,11 @@ footer {
   header .container {
     flex-direction: column;
     gap: 1rem;
+  }
+  
+  .header-right {
+    width: 100%;
+    justify-content: center;
   }
   
   nav a {

@@ -1,10 +1,12 @@
 <header>
     <div class="container">
         <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
-        <nav>
-            {% for page in site.header_pages %}
-                <a href="{{ page.url | relative_url }}">{{ page.title }}</a>
-            {% endfor %}
-        </nav>
+        <div class="header-right">
+            <div class="language-switcher">
+                <button class="language-btn" data-lang="en" title="English">EN</button>
+                <button class="language-btn" data-lang="es" title="Español">ES</button>
+                <button class="language-btn" data-lang="pt" title="Português">PT</button>
+            </div>
+        </div>
     </div>
 </header>

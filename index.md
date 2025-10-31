@@ -4,7 +4,7 @@ title: Home
 ---
 
 <div class="hero-section">
-  <h1>Welcome to My Digital CV</h1>
+  <h1>Welcome to my Carreer Portifolio. I am glad you want to know more about me.</h1>
   <p>Select a language to get started</p>
 </div>
 

@@ -15,5 +15,19 @@ layout: default
         {{ content }}
     </main>
     {% include footer.html %}
+    <script>
+        // Header language switcher functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const headerLangButtons = document.querySelectorAll('.header-right .language-btn');
+            
+            headerLangButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const lang = this.getAttribute('data-lang');
+                    // Navigate to the resume page for the selected language
+                    window.location.href = '/resume-' + lang + '/';
+                });
+            });
+        });
+    </script>
 </body>
 </html>
