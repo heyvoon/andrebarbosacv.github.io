@@ -4,15 +4,7 @@ title: Home
 ---
 
 <div class="hero-section">
-  <h1>Welcome to my Carreer Portifolio. I am glad you want to know more about me.</h1>
-  <p>Select a language to get started</p>
-</div>
-
-<div class="language-switcher">
-  <button class="language-btn active" data-lang="en">English</button>
-  <button class="language-btn" data-lang="es">Español</button>
-  <button class="language-btn" data-lang="pt">Português</button>
-</div>
+  <h1>Welcome to my Carreer Portifolio.</h1>
 
 <div class="content-section">
   <div class="video-container">
