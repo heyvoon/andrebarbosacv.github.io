@@ -124,8 +124,28 @@ layout: default
     {% include footer.html %}
 
     <script>
+        // Theme switching functionality
+        function initializeTheme() {
+            const themeToggle = document.getElementById('theme-toggle');
+            const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+            const savedTheme = localStorage.getItem('theme') || (prefersDarkScheme.matches ? 'dark' : 'light');
+            
+            // Set initial theme
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            
+            themeToggle.addEventListener('click', function() {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+                
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+            });
+        }
+
         // Global language management and tab switching
         document.addEventListener('DOMContentLoaded', function() {
+            // Initialize theme first
+            initializeTheme();
             // Elements
             const tabButtons = document.querySelectorAll('.tab-btn');
             const tabContents = document.querySelectorAll('.tab-content');
