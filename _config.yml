@@ -15,13 +15,5 @@ defaults:
     values:
       permalink: /resume-:basename/
 
-resume:
-  en:
-    title: "Resume (English)"
-    permalink: "/assets/resumes/resume-en/"
-  es:
-    title: "Resume (Spanish)"
-    permalink: "/assets/resumes/resume-es/"
-  pt:
-    title: "Resume (Portuguese)"
-    permalink: "/assets/resumes/resume-pt/"
+# Resume configuration is handled by the defaults section above
+# The resume files are now in assets/resumes/ with proper permalinks

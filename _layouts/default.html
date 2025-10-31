@@ -16,7 +16,7 @@ layout: default
     </main>
     {% include footer.html %}
     <script>
-        // Header language switcher and download functionality
+        // Global language management
         document.addEventListener('DOMContentLoaded', function() {
             const headerLangButtons = document.querySelectorAll('.header-right .language-btn');
             const downloadLink = document.getElementById('download-cv-link');
@@ -28,33 +28,75 @@ layout: default
                 'pt': '{{ "/assets/pdf/andre_barbosa_resume_portuguese.pdf" | relative_url }}'
             };
             
-            // Detect current page language from URL
+            // Get or set default language
+            function getCurrentLanguage() {
+                return localStorage.getItem('selectedLanguage') || 'en';
+            }
+            
+            function setCurrentLanguage(lang) {
+                localStorage.setItem('selectedLanguage', lang);
+            }
+            
+            // Detect current page type
             const currentPath = window.location.pathname;
-            let currentLang = null;
+            const isHomePage = currentPath === '/' || currentPath === '/index.html' || currentPath.endsWith('/');
+            const isResumePage = currentPath.includes('/resume-');
+            
+            // Get current language from URL or localStorage
+            let currentLang = getCurrentLanguage();
             
             if (currentPath.includes('/resume-en')) {
                 currentLang = 'en';
+                setCurrentLanguage('en');
             } else if (currentPath.includes('/resume-es')) {
                 currentLang = 'es';
+                setCurrentLanguage('es');
             } else if (currentPath.includes('/resume-pt')) {
                 currentLang = 'pt';
+                setCurrentLanguage('pt');
             }
             
             // Show download button if on a resume page
-            if (currentLang && downloadLink) {
+            if (isResumePage && downloadLink) {
                 downloadLink.href = pdfLinks[currentLang];
                 downloadLink.style.display = 'inline-flex';
                 downloadLink.setAttribute('download', '');
             }
             
+            // Highlight active language button
+            headerLangButtons.forEach(button => {
+                if (button.getAttribute('data-lang') === currentLang) {
+                    button.classList.add('active');
+                } else {
+                    button.classList.remove('active');
+                }
+            });
+            
             // Language button click handlers
             headerLangButtons.forEach(button => {
                 button.addEventListener('click', function() {
                     const lang = this.getAttribute('data-lang');
-                    // Navigate to the resume page for the selected language
-                    window.location.href = '/resume-' + lang + '/';
+                    setCurrentLanguage(lang);
+                    
+                    // Update active state
+                    headerLangButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Navigate to resume page or trigger video update on home page
+                    if (isHomePage) {
+                        // Trigger custom event for home page video update
+                        window.dispatchEvent(new CustomEvent('languageChanged', { detail: { language: lang } }));
+                    } else {
+                        // Navigate to the resume page for the selected language
+                        window.location.href = '/resume-' + lang + '/';
+                    }
                 });
             });
+            
+            // Trigger initial language event for home page
+            if (isHomePage) {
+                window.dispatchEvent(new CustomEvent('languageChanged', { detail: { language: currentLang } }));
+            }
         });
     </script>
 </body>
