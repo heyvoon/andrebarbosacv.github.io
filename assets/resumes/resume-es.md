@@ -1,9 +1,3 @@
----
-layout: page
-title: Currículum (Español)
-permalink: /resume-es/
----
-
 ## Resumen
 Ingeniero Senior de Infraestructura IT con más de tres décadas de experiencia especializado en infraestructura escalable, automatización y soluciones cloud. Enfoque en tecnologías open-source e ingeniería con IA para mejorar el diseño de infraestructura y flujos de trabajo DevOps.
 

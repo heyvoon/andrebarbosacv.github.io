@@ -44,8 +44,8 @@ layout: default
         <div id="resume-tab-content" class="tab-content">
             <div class="container">
                 <div class="resume-content" id="resume-content">
-                    {% capture resume_content %}{% include_relative {{ site.data.en.resume_md_path }} %}{% endcapture %}
-                    {{ resume_content | markdownify }}
+                    {% assign default_resume = site.pages | where: "path", "assets/resumes/resume-en.md" | first %}
+                    {{ default_resume.content | markdownify }}
                 </div>
                 <div class="download-section">
                     <a href="{{ site.data.en.pdf_path | relative_url }}" class="download-pdf-btn" id="download-pdf-btn" download>
@@ -82,8 +82,7 @@ layout: default
                         download_pdf: 'Download PDF Resume'
                     },
                     video_path: '{{ site.data.en.video_path | relative_url }}',
-                    pdf_path: '{{ site.data.en.pdf_path | relative_url }}',
-                    resume_md_path: '{{ site.data.en.resume_md_path }}'
+                    pdf_path: '{{ site.data.en.pdf_path | relative_url }}'
                 },
                 'es': {
                     nav_labels: {
@@ -94,8 +93,7 @@ layout: default
                         download_pdf: 'Descargar PDF del Currículum'
                     },
                     video_path: '{{ site.data.es.video_path | relative_url }}',
-                    pdf_path: '{{ site.data.es.pdf_path | relative_url }}',
-                    resume_md_path: '{{ site.data.es.resume_md_path }}'
+                    pdf_path: '{{ site.data.es.pdf_path | relative_url }}'
                 },
                 'pt': {
                     nav_labels: {
@@ -106,8 +104,7 @@ layout: default
                         download_pdf: 'Baixar PDF do Currículo'
                     },
                     video_path: '{{ site.data.pt.video_path | relative_url }}',
-                    pdf_path: '{{ site.data.pt.pdf_path | relative_url }}',
-                    resume_md_path: '{{ site.data.pt.resume_md_path }}'
+                    pdf_path: '{{ site.data.pt.pdf_path | relative_url }}'
                 }
             };
 
@@ -174,12 +171,8 @@ layout: default
                     videoElement.play().catch(e => console.log('Autoplay prevented:', e));
                 }
 
-                // Update resume content if resume tab is active
-                if (getCurrentTab() === 'resume') {
-                    // This would require a more complex solution for dynamic content loading
-                    // For now, we'll rely on the initial server-side rendering
-                    console.log('Resume content update would happen here for language:', lang);
-                }
+                // Note: Resume content is pre-rendered server-side for each language
+                // The content doesn't change dynamically due to Jekyll static generation
 
                 // Update active language button
                 languageButtons.forEach(btn => {
