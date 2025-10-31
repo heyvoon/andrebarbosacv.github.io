@@ -36,6 +36,12 @@ header .container {
   gap: 1rem;
 }
 
+.view-resume-label {
+  color: #89ddff;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
 .download-cv-btn {
   display: inline-flex;
   align-items: center;
@@ -264,6 +270,12 @@ footer {
     width: 100%;
     justify-content: center;
     flex-wrap: wrap;
+  }
+  
+  .view-resume-label {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0.5rem;
   }
   
   .download-cv-btn {
