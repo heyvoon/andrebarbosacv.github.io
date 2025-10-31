@@ -58,7 +58,7 @@ main {
 // Hero Section Styles
 .hero-section {
   text-align: center;
-  padding: 4rem 2rem;
+  padding: 0.50rem 0.50rem;
   background: linear-gradient(135deg, #1e1e1e 0%, #2d2d2d 100%);
 }
 
@@ -96,11 +96,11 @@ main {
 .view-cv-section, .pdf-download-section {
   text-align: center;
   background-color: #1e1e1e;
-  padding: 2rem;
+  padding: 0.50rem;
   border-radius: 8px;
   border: 1px solid #333;
   flex: 1;
-  min-width: 300px;
+  min-width: 150px;
 }
 
 .view-cv-section h2, .pdf-download-section h2 {

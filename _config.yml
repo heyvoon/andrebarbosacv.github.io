@@ -23,10 +23,10 @@ defaults:
 resume:
   en:
     title: "Resume (English)"
-    permalink: "/resume-en/"
+    permalink: "/assets/resumes/resume-en/"
   es:
     title: "Resume (Spanish)"
-    permalink: "/resume-es/"
+    permalink: "/assets/resumes/resume-es/"
   pt:
     title: "Resume (Portuguese)"
-    permalink: "/resume-pt/"
+    permalink: "/assets/resumes/resume-pt/"
