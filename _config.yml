@@ -1,11 +1,10 @@
-title: "André Barbosa de Amaral - Curriculum Vitae"
+title: "André Barbosa de Amaral"
+email: bcn.andre@gmail.com
 baseurl: ""
-url: "https://heyvoon.github.io"
-
-# GitHub Pages configuration
-repository: "heyvoon/heyvoon.github.io"
+url: "https://andrebarbosacv.github.io"
+remote_theme: pages-themes/hacker@v0.2.0
 plugins:
-  - jekyll-relative-links
+  - jekyll-remote-theme
 
 # Resume configuration is now handled by _data files and dynamic includes
 # The resume files are in assets/resumes/ and are included via Liquid templates
