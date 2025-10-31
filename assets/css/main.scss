@@ -36,46 +36,23 @@ header .container {
   gap: 1rem;
 }
 
-.view-resume-label {
-  color: #89ddff;
-  font-weight: 500;
-  font-size: 0.95rem;
-}
-
-.download-cv-btn {
-  display: inline-flex;
+.linkedin-link {
+  display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 1rem;
-  background-color: #bb86fc;
-  color: #000;
+  color: #0077b5;
   text-decoration: none;
+  padding: 0.5rem;
   border-radius: 4px;
-  font-weight: 600;
-  font-size: 0.9rem;
   transition: all 0.3s ease;
-}
 
-.download-cv-btn:hover {
-  background-color: #a5d6ff;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
+  &:hover {
+    background-color: rgba(0, 119, 181, 0.1);
+    color: #005582;
+  }
 
-.download-cv-btn svg {
-  width: 16px;
-  height: 16px;
-}
-
-.header-right .language-switcher {
-  margin: 0;
-  gap: 0.5rem;
-}
-
-.header-right .language-btn {
-  padding: 0.4rem 0.8rem;
-  font-size: 0.9rem;
-  min-width: 40px;
+  svg {
+    display: block;
+  }
 }
 
 .site-title {
