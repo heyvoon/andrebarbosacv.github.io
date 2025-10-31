@@ -1,6 +1,11 @@
 title: "André Barbosa de Amaral - Curriculum Vitae"
 baseurl: ""
-url: "https://andrebarbosacv.github.io"
+url: "https://andrebarbosacv.github.io/"
+
+# GitHub Pages configuration
+repository: "andrebarbosacv/andrebarbosacv.github.io"
+plugins:
+  - jekyll-relative-links
 
 # Resume configuration is now handled by _data files and dynamic includes
 # The resume files are in assets/resumes/ and are included via Liquid templates

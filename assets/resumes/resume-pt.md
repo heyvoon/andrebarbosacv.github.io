@@ -1,3 +1,7 @@
+---
+layout: null
+---
+
 ## Resumo
 Engenheiro Sênior de Infraestrutura de TI com mais de três décadas de experiência especializado em infraestrutura escalável, automação e soluções em nuvem. Foco em tecnologias open-source e engenharia com IA para melhorar o design de infraestrutura e fluxos de trabalho DevOps.
 

@@ -1,3 +1,7 @@
+---
+layout: null
+---
+
 ## Summary
 Senior IT Infrastructure Engineer with over three decades of experience specializing in scalable infrastructure, automation, and cloud solutions. Focus on open-source technologies and AI-powered engineering to enhance infrastructure design and DevOps workflows.
 
