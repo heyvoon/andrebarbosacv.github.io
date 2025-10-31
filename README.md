@@ -8,7 +8,7 @@ A modern, multilingual digital curriculum vitae built with Jekyll, featuring a s
 - **Single-Page Application**: Tabbed interface with smooth transitions
 - **Video Introductions**: Language-specific video presentations
 - **Responsive Design**: Optimized for desktop and mobile devices
-- **Dark Theme**: Modern dark color scheme with accent colors
+- **Theme Toggle**: Switch between light and dark themes with one click
 - **Dynamic Content**: Language switching without page reloads
 - **PDF Downloads**: Downloadable resume PDFs for each language
 - **SEO Optimized**: Comprehensive meta tags, structured data, and search engine optimization
@@ -93,13 +93,14 @@ digital_cv/
 - Clean typography and spacing
 
 ### Technical Features
-- **Local Storage**: Remembers user's language preference
+- **Local Storage**: Remembers user's language and theme preferences
 - **Dynamic Updates**: Content updates without page reloads
 - **Responsive**: Mobile-first design approach
 - **Accessibility**: Semantic HTML and keyboard navigation
 - **SEO Optimization**: Meta tags, structured data, sitemap, and robots.txt
 - **Performance**: Optimized loading and smooth animations
 - **Interactive UI**: Hover effects and visual feedback
+- **Theme System**: CSS variables for easy theme management
 
 ## 🌐 Language Support
 
@@ -168,5 +169,13 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 - **Sitemap**: XML sitemap for search engine indexing
 - **Robots.txt**: Crawler guidance and indexing control
 - **Canonical URLs**: Prevents duplicate content issues
+
+## 🌓 Theme Features
+
+- **Light/Dark Theme Toggle**: Switch between themes with one click
+- **System Preference Detection**: Automatically detects OS theme preference
+- **Persistent Storage**: Remembers user's theme choice
+- **Smooth Transitions**: Elegant color transitions between themes
+- **Professional Design**: Both themes maintain professional appearance
 
 Built with ❤️ using Jekyll and modern web technologies.
