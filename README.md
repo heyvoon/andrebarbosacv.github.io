@@ -1,6 +1,6 @@
 # Digital Curriculum - André Barbosa
 
-A modern, multilingual digital curriculum vitae built with Jekyll, featuring a single-page application interface with video introductions and resume content in multiple languages.
+A modern, multilingual digital curriculum vitae built with Jekyll, featuring a single-page application interface with video introductions, resume content in multiple languages, and comprehensive SEO optimization.
 
 ## 🌟 Features
 
@@ -11,6 +11,9 @@ A modern, multilingual digital curriculum vitae built with Jekyll, featuring a s
 - **Dark Theme**: Modern dark color scheme with accent colors
 - **Dynamic Content**: Language switching without page reloads
 - **PDF Downloads**: Downloadable resume PDFs for each language
+- **SEO Optimized**: Comprehensive meta tags, structured data, and search engine optimization
+- **Interactive Elements**: Profile picture zoom effect and smooth animations
+- **Calendar Integration**: Professional booking section for meetings
 
 ## 🚀 Quick Start
 
@@ -94,6 +97,9 @@ digital_cv/
 - **Dynamic Updates**: Content updates without page reloads
 - **Responsive**: Mobile-first design approach
 - **Accessibility**: Semantic HTML and keyboard navigation
+- **SEO Optimization**: Meta tags, structured data, sitemap, and robots.txt
+- **Performance**: Optimized loading and smooth animations
+- **Interactive UI**: Hover effects and visual feedback
 
 ## 🌐 Language Support
 
@@ -150,7 +156,17 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 - **LinkedIn**: [André Barbosa](https://www.linkedin.com/in/abamaral)
 - **Live Site**: https://yourusername.github.io/
+- **Email**: bcn.andre@gmail.com
 
 ---
+
+## 🔍 SEO Features
+
+- **Meta Tags**: Comprehensive description and keywords for search engines
+- **Structured Data**: JSON-LD markup for rich snippets
+- **Open Graph**: Social media sharing optimization
+- **Sitemap**: XML sitemap for search engine indexing
+- **Robots.txt**: Crawler guidance and indexing control
+- **Canonical URLs**: Prevents duplicate content issues
 
 Built with ❤️ using Jekyll and modern web technologies.
