@@ -3,7 +3,7 @@ baseurl: ""
 url: "https://andrebarbosacv.github.io/"
 
 # GitHub Pages configuration
-repository: "andrebarbosacv/andrebarbosacv.github.io"
+repository: "heyvoon/andrebarbosacv.github.io"
 plugins:
   - jekyll-relative-links
 
