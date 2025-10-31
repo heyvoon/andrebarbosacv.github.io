@@ -29,17 +29,12 @@ git clone https://github.com/yourusername/digital-cv.git
 cd digital-cv
 ```
 
-2. Install dependencies:
+2. Serve locally (if you have Jekyll installed):
 ```bash
-bundle install
+jekyll serve
 ```
 
-3. Serve locally:
-```bash
-bundle exec jekyll serve
-```
-
-4. Open `http://localhost:4000` in your browser
+3. Open `http://localhost:4000` in your browser
 
 ### Deployment
 
@@ -154,7 +149,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ## 📞 Contact
 
 - **LinkedIn**: [André Barbosa](https://www.linkedin.com/in/abamaral)
-- **Email**: [Your email]
+- **Live Site**: https://yourusername.github.io/
 
 ---
 
