@@ -7,6 +7,47 @@ layout: default
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ site.title }}</title>
+    <meta name="description" content="Senior IT Infrastructure Engineer with 30+ years experience in cloud, automation, and AI-powered infrastructure. Multilingual CV in English, Spanish, and Portuguese.">
+    <meta name="keywords" content="IT Infrastructure Engineer, Cloud Architect, DevOps, AWS, Azure, Terraform, Kubernetes, Senior Engineer, Digital CV, Resume">
+    <meta name="author" content="André Barbosa de Amaral">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ site.url }}/">
+    <meta property="og:title" content="{{ site.title }}">
+    <meta property="og:description" content="Senior IT Infrastructure Engineer with 30+ years experience in cloud, automation, and AI-powered infrastructure.">
+    <meta property="og:image" content="{{ site.url }}/assets/profile_picture.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="{{ site.url }}/">
+    <meta property="twitter:title" content="{{ site.title }}">
+    <meta property="twitter:description" content="Senior IT Infrastructure Engineer with 30+ years experience in cloud, automation, and AI-powered infrastructure.">
+    <meta property="twitter:image" content="{{ site.url }}/assets/profile_picture.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="{{ site.url }}/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ '/assets/profile_picture.png' | relative_url }}">
+    
+    <!-- Structured Data / JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "André Barbosa de Amaral",
+      "jobTitle": "Senior IT Infrastructure Engineer",
+      "url": "{{ site.url }}",
+      "sameAs": [
+        "https://www.linkedin.com/in/abamaral"
+      ],
+      "knowsLanguage": ["en", "es", "pt"],
+      "email": "{{ site.email }}",
+      "description": "Senior IT Infrastructure Engineer with over three decades of experience specializing in scalable infrastructure, automation, and cloud solutions."
+    }
+    </script>
+    
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
 </head>
 <body>
