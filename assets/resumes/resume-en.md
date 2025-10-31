@@ -3,11 +3,6 @@ layout: page
 title: Resume (English)
 permalink: /resume-en/
 ---
-<div class="language-switcher">
-  <button class="language-btn active" data-lang="en">English</button>
-  <button class="language-btn" data-lang="es">Español</button>
-  <button class="language-btn" data-lang="pt">Português</button>
-</div>
 
 ## Summary
 Senior IT Infrastructure Engineer with over three decades of experience specializing in scalable infrastructure, automation, and cloud solutions. Focus on open-source technologies and AI-powered engineering to enhance infrastructure design and DevOps workflows.

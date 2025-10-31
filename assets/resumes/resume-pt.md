@@ -3,11 +3,6 @@ layout: page
 title: Currículo (Português)
 permalink: /resume-pt/
 ---
-<div class="language-switcher">
-  <button class="language-btn" data-lang="en">English</button>
-  <button class="language-btn" data-lang="es">Español</button>
-  <button class="language-btn active" data-lang="pt">Português</button>
-</div>
 
 ## Resumo
 Engenheiro Sênior de Infraestrutura de TI com mais de três décadas de experiência especializado em infraestrutura escalável, automação e soluções em nuvem. Foco em tecnologias open-source e engenharia com IA para melhorar o design de infraestrutura e fluxos de trabalho DevOps.
