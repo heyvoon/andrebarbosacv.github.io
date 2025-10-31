@@ -42,6 +42,14 @@ header .container {
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid #bb86fc;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  
+  &:hover {
+    transform: scale(1.2);
+    box-shadow: 0 4px 12px rgba(187, 134, 252, 0.4);
+    border-color: #a5d6ff;
+  }
 }
 
 .header-right {
